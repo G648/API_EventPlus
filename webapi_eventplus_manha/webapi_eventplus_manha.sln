@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webapi_eventplus_manha", "webapi_eventplus_manha.csproj", "{F528B7A8-AA02-4A2E-BDA6-B3AD94286074}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F528B7A8-AA02-4A2E-BDA6-B3AD94286074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F528B7A8-AA02-4A2E-BDA6-B3AD94286074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F528B7A8-AA02-4A2E-BDA6-B3AD94286074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F528B7A8-AA02-4A2E-BDA6-B3AD94286074}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {181397EE-BA90-497F-9228-B49301D32274}
+	EndGlobalSection
+EndGlobal
