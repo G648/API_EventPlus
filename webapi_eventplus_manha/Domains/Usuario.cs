@@ -27,7 +27,7 @@ namespace webapi_eventplus_manha.Domains
         [DisplayName("Senha Usuario")]
         [Required (ErrorMessage ="O nome do campo Senha é obrigatório!")]
         [Column(TypeName = "VARCHAR(100)")]
-        [StringLength(20,MinimumLength = 5, ErrorMessage ="O nome do campo deve conter entre 0 e 20 caracteres")]
+        [StringLength(60,MinimumLength = 5, ErrorMessage ="O nome do campo deve conter entre 0 e 20 caracteres")]
         public string? SenhaUser { get; set; }
 
 
