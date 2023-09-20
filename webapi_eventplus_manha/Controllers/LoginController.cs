@@ -21,6 +21,11 @@ namespace webapi_eventplus_manha.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
+        /// <summary>
+        /// Método para realizar o login do usuáro
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns>Token do uuário logado</returns>
         [HttpPost]
         public IActionResult Login(LoginViewModel usuario)
         {
@@ -28,7 +33,7 @@ namespace webapi_eventplus_manha.Controllers
             {
                 Usuario usuarioBuscadoLogin = _usuarioRepository.BuscarPorEmailESenha(usuario.EmailUser, usuario.Senhauser);
 
-                if (usuarioBuscadoLogin != null)
+                if (usuarioBuscadoLogin == null)
                 {
                     return NotFound("Email ou senha inválidos");
                 }
@@ -42,6 +47,7 @@ namespace webapi_eventplus_manha.Controllers
                     new Claim(JwtRegisteredClaimNames.Jti,usuarioBuscadoLogin.IdUsuario.ToString()),
                     new Claim(JwtRegisteredClaimNames.Email,usuarioBuscadoLogin.EmailUser!),
                     new Claim(ClaimTypes.Role,usuarioBuscadoLogin.TiposUsuario.ToString()),
+                    new Claim(ClaimTypes.Role, usuarioBuscadoLogin.TiposUsuario.TituloTipoUsuario!)
 
                     //existe a possibilidade de criar uma claim personalizada
                     //new Claim("Claim Personalizada","Valor da Claim Personalizada")

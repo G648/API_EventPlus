@@ -77,3 +77,5 @@ C:\Users\45845444845\Desktop\Projeto_Event+_Manha_CF\webapi_eventplus_manha\bin\
 C:\Users\45845444845\Desktop\Projeto_Event+_Manha_CF\webapi_eventplus_manha\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\45845444845\Desktop\Projeto_Event+_Manha_CF\webapi_eventplus_manha\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\45845444845\Desktop\Projeto_Event+_Manha_CF\webapi_eventplus_manha\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\45845444845\Desktop\Projeto_Event+_Manha_CF\webapi_eventplus_manha\bin\Debug\net7.0\webapi_eventplus_manha.xml
+C:\Users\45845444845\Desktop\Projeto_Event+_Manha_CF\webapi_eventplus_manha\obj\Debug\net7.0\webapi_eventplus_manha.xml

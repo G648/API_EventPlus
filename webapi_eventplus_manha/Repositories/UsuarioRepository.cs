@@ -19,7 +19,19 @@ namespace webapi_eventplus_manha.Repositories
         {
             try
             {
-                Usuario usuarioBuscadoEmail = _eventContext.Usuario.FirstOrDefault(u => u.EmailUser == email)!;
+                Usuario usuarioBuscadoEmail = _eventContext.Usuario
+                     .Select(u => new Usuario
+                     {
+                         IdUsuario = u.IdUsuario,
+                         NomeUsuario = u.NomeUsuario,
+                         EmailUser = u.EmailUser,
+                         SenhaUser = u.SenhaUser,
+
+                         TiposUsuario = new TiposUsuario
+                         {
+                             TituloTipoUsuario = u.TiposUsuario!.TituloTipoUsuario
+                         }
+                     }).FirstOrDefault(u => u.EmailUser == email)!;
 
                 if (usuarioBuscadoEmail != null)
                 {

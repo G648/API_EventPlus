@@ -34,12 +34,19 @@ namespace webapi_eventplus_manha.Repositories
 
         public void Deletar(Guid id)
         {
-            throw new NotImplementedException();
+            //_eventContext.TiposUsuarios.Remove(BuscarPorId(id));
+
+            //_eventContext.SaveChanges();
+
+            TiposUsuario usuarioRemovido = _eventContext.TiposUsuarios.Where(d => d.IdTipoUsuario == id).First();
+            _eventContext.Remove(usuarioRemovido);
+
+            _eventContext.SaveChanges();
         }
 
         public List<TiposUsuario> ListarTiposUsuario()
         {
-            throw new NotImplementedException();
+            return _eventContext.TiposUsuarios.ToList();
         }
 
     }

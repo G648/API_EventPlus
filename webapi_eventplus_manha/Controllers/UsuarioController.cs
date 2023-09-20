@@ -19,6 +19,11 @@ namespace webapi_eventplus_manha.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
+        /// <summary>
+        /// Método para realizar o cadastro de um novo usuário
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns>Usuário cadastrado</returns>
         [HttpPost]
         public IActionResult Post (Usuario usuario)
         {

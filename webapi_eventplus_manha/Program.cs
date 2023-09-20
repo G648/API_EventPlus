@@ -1,4 +1,6 @@
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,6 +44,52 @@ builder.Services.AddAuthentication(options =>
         };
     });
 
+builder.Services.AddSwaggerGen(options =>
+{
+    //Adiciona informações sobre a API no Swagger
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "API para gerenciamento de eventos",
+        Description = "API para gereciamento de eventos - Sprint2 - Projeto",
+        Contact = new OpenApiContact
+        {
+            Name = "Senai Informática - Turma Manhã",
+            Url = new Uri("https://github.com/senai-desenvolvimento")
+        }
+    });
+
+    //Configura o Swagger para usar o arquivo XML gerado
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+
+
+    //Usando a autenticaçao no Swagger
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Value: Bearer TokenJWT ",
+    });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] {}
+        }
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -51,7 +99,16 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+//Para atender à interface do usuário do Swagger na raiz do aplicativo
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+    options.RoutePrefix = string.Empty;
+});
+
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

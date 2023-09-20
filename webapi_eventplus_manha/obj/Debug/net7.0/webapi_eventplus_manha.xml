@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>webapi_eventplus_manha</name>
+    </assembly>
+    <members>
+        <member name="M:webapi_eventplus_manha.Controllers.LoginController.Login(webapi_eventplus_manha.ViewModels.LoginViewModel)">
+            <summary>
+            Método para realizar o login do usuáro
+            </summary>
+            <param name="usuario"></param>
+            <returns>Token do uuário logado</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.TiposUsuarioController.Post(webapi_eventplus_manha.Domains.TiposUsuario)">
+            <summary>
+            Método para realizar o cadastro de um novo tipo de usuário 
+            </summary>
+            <param name="tiposUsuario"></param>
+            <returns>Usuario cadastrado</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.TiposUsuarioController.Get">
+            <summary>
+            Realiza a listagem de todos os tipos de usuário
+            </summary>
+            <returns>Lista com todos os tipos de usuário</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.TiposUsuarioController.Delete(System.Guid)">
+            <summary>
+            método para realizar o Delete de um tipo de usuário específico
+            </summary>
+            <returns>Tipo de Usuário deletado</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.UsuarioController.Post(webapi_eventplus_manha.Domains.Usuario)">
+            <summary>
+            Método para realizar o cadastro de um novo usuário
+            </summary>
+            <param name="usuario"></param>
+            <returns>Usuário cadastrado</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.ITiposUsuarioRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Método que será criado para buscar um usuário por ID
+            </summary>
+            <param name="id"></param>
+            <returns>Usuario Com o ID Buscado</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.ITiposUsuarioRepository.CadastrarTipoUsuario(webapi_eventplus_manha.Domains.TiposUsuario)">
+            <summary>
+            Método para realizar o cadastro de um novo tipo de usuário
+            </summary>
+            <param name="tiposUsuario"></param>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.ITiposUsuarioRepository.ListarTiposUsuario">
+            <summary>
+            Listar todos os usuários criados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.ITiposUsuarioRepository.Atualizar(System.Guid,webapi_eventplus_manha.Domains.TiposUsuario)">
+            <summary>
+            Método para realizar a atualização de um tipo de usuário
+            </summary>
+            <param name="id"></param>
+            <param name="tiposUsuario"></param>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.ITiposUsuarioRepository.Deletar(System.Guid)">
+            <summary>
+            Método para deletar um tipo de usuário específico
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.IUsuarioRepository.Cadastrar(webapi_eventplus_manha.Domains.Usuario)">
+            <summary>
+            Método para cadastrar um novo usuário
+            </summary>
+            <param name="usuario"></param>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.IUsuarioRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Método para buscar um usuário por ID
+            </summary>
+            <param name="id"></param>
+            <returns>Usuario Buscado com ID</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.IUsuarioRepository.BuscarPorEmailESenha(System.String,System.String)">
+            <summary>
+            Método para retornar o usuario através do email e senha
+            </summary>
+            <param name="email"></param>
+            <param name="senha"></param>
+            <returns></returns>
+        </member>
+        <member name="T:webapi_eventplus_manha.Migrations.DBEventPlus01">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi_eventplus_manha.Migrations.DBEventPlus01.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi_eventplus_manha.Migrations.DBEventPlus01.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi_eventplus_manha.Migrations.DBEventPlus01.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:webapi_eventplus_manha.Migrations.DBEventPlus02">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi_eventplus_manha.Migrations.DBEventPlus02.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi_eventplus_manha.Migrations.DBEventPlus02.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi_eventplus_manha.Migrations.DBEventPlus02.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi_eventplus_manha.Utils.Criptografia.GerarHash(System.String)">
+            <summary>
+            Gera uma hash a partir de uma nova senha
+            </summary>
+            <param name="senha">senha que receberá a hash </param>
+            <returns>Senha criptografada</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Utils.Criptografia.CompararHash(System.String,System.String)">
+            <summary>
+            Verifica se a hash da senha informada é igual a hash salva no banco
+            </summary>
+            <param name="senhaForm">Senha Informada pelo Usuário</param>
+            <param name="senhaBanco">Senha cadastrada no banco</param>
+            <returns>trul or false (senha é verdadeira?
+            0</returns>
+        </member>
+    </members>
+</doc>

@@ -8,7 +8,7 @@ namespace webapi_eventplus_manha.Domains
     public class Evento
     {
         [Key]
-        public Guid IdEvento { get; set; }
+        public Guid IdEvento { get; set; } = Guid.NewGuid();
 
         [Required(ErrorMessage = "O nome do campo é obrigatório")]
         [Column(TypeName ="DATE")]
