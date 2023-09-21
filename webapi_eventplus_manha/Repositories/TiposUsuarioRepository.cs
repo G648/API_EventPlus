@@ -17,12 +17,31 @@ namespace webapi_eventplus_manha.Repositories
 
         public void Atualizar(Guid id, TiposUsuario tiposUsuario)
         {
-            throw new NotImplementedException();
+            TiposUsuario usuarioBuscado = _eventContext.TiposUsuarios.Find(id);
+
+            if (usuarioBuscado != null)
+            {
+                usuarioBuscado.TituloTipoUsuario = tiposUsuario.TituloTipoUsuario;
+            }
+
+            _eventContext.TiposUsuarios.Update(usuarioBuscado!);
+
+            _eventContext.SaveChanges();
         }
 
         public TiposUsuario BuscarPorId(Guid id)
         {
-            throw new NotImplementedException();
+           
+                TiposUsuario tiposUsuarioBuscado = _eventContext.TiposUsuarios
+                    .Select(t => new TiposUsuario
+                    {
+                        IdTipoUsuario = t.IdTipoUsuario,
+                        TituloTipoUsuario = t.TituloTipoUsuario
+
+                    }).FirstOrDefault(t => t.IdTipoUsuario == id)!;
+
+                return tiposUsuarioBuscado!;
+        
         }
 
         public void CadastrarTipoUsuario(TiposUsuario tiposUsuario)

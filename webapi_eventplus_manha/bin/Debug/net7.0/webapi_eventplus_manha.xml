@@ -30,6 +30,21 @@
             </summary>
             <returns>Tipo de Usuário deletado</returns>
         </member>
+        <member name="M:webapi_eventplus_manha.Controllers.TiposUsuarioController.GetById(System.Guid)">
+            <summary>
+            Método para buscar um usuario por ID
+            </summary>
+            <param name="id"></param>
+            <returns> Usuario buscado por Id</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.TiposUsuarioController.Put(System.Guid,webapi_eventplus_manha.Domains.TiposUsuario)">
+            <summary>
+            Método para atualizar um usuário específico
+            </summary>
+            <param name="id"></param>
+            <param name="tiposUsuario"></param>
+            <returns>Usuario atualizado</returns>
+        </member>
         <member name="M:webapi_eventplus_manha.Controllers.UsuarioController.Post(webapi_eventplus_manha.Domains.Usuario)">
             <summary>
             Método para realizar o cadastro de um novo usuário

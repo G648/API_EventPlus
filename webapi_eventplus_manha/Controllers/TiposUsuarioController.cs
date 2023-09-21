@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using webapi_eventplus_manha.Domains;
 using webapi_eventplus_manha.Interfaces;
@@ -44,6 +45,7 @@ namespace webapi_eventplus_manha.Controllers
         /// </summary>
         /// <returns>Lista com todos os tipos de usuário</returns>
         [HttpGet]
+        //[Authorize(Roles = "Administrador")]
         public IActionResult Get()
         {
             try
@@ -73,6 +75,45 @@ namespace webapi_eventplus_manha.Controllers
             catch (Exception error)
             {
                return BadRequest(error.Message);
+            }
+        }
+
+        /// <summary>
+        /// Método para buscar um usuario por ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> Usuario buscado por Id</returns>
+        [HttpGet("{id}")]
+        public IActionResult GetById(Guid id)
+        {
+            try
+            { 
+                return Ok(_tiposUsuarioRepository.BuscarPorId(id));
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error.Message);
+            }
+        }
+        
+
+        /// <summary>
+        /// Método para atualizar um usuário específico
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="tiposUsuario"></param>
+        /// <returns>Usuario atualizado</returns>
+        [HttpPut]
+        public IActionResult Put(Guid id, TiposUsuario tiposUsuario)
+        {
+            try
+            {
+                _tiposUsuarioRepository.Atualizar(id, tiposUsuario);
+                return Ok("Usuário atualizado com sucesso!");
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error.Message);
             }
         }
     }

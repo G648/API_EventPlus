@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using webapi_eventplus_manha.Domains;
 using webapi_eventplus_manha.Interfaces;
@@ -25,7 +26,8 @@ namespace webapi_eventplus_manha.Controllers
         /// <param name="usuario"></param>
         /// <returns>Usuário cadastrado</returns>
         [HttpPost]
-        public IActionResult Post (Usuario usuario)
+        //[Authorize(Roles = "Administrador")]
+        public IActionResult Post(Usuario usuario)
         {
             try
             {
@@ -38,5 +40,7 @@ namespace webapi_eventplus_manha.Controllers
                 return BadRequest(error.Message);
             }
         }
+
+        
     }
 }
