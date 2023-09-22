@@ -12,6 +12,7 @@ namespace webapi_eventplus_manha.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Produces("application/json")]
     public class LoginController : ControllerBase
     {
         private readonly IUsuarioRepository _usuarioRepository;

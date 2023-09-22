@@ -11,6 +11,25 @@
             <param name="usuario"></param>
             <returns>Token do uuário logado</returns>
         </member>
+        <member name="M:webapi_eventplus_manha.Controllers.TiposEventoController.Post(webapi_eventplus_manha.Domains.TiposEvento)">
+            <summary>
+            Método para cadastrar um novo tipo de evento
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.TiposEventoController.Get">
+            <summary>
+            Método para listar um tipo de evento 
+            </summary>
+            <returns>Tipos de eventos</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.TiposEventoController.Delete(System.Guid)">
+            <summary>
+            Método para deletar um novo tipo de evento
+            </summary>
+            <param name="id"></param>
+            <returns>status 204 - No Content</returns>
+        </member>
         <member name="M:webapi_eventplus_manha.Controllers.TiposUsuarioController.Post(webapi_eventplus_manha.Domains.TiposUsuario)">
             <summary>
             Método para realizar o cadastro de um novo tipo de usuário 
@@ -51,6 +70,76 @@
             </summary>
             <param name="usuario"></param>
             <returns>Usuário cadastrado</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.IInstituicaoRepository.CadastrarInstituicao(webapi_eventplus_manha.Domains.Instituicao)">
+            <summary>
+            Método para cadastrar uma nova instituição
+            </summary>
+            <param name="presencasEvento"></param>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.IPresencaEventoRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Método que será criado para buscar um usuário por ID
+            </summary>
+            <param name="id"></param>
+            <returns>Usuario Com o ID Buscado</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.IPresencaEventoRepository.CadastrarPresencaEvento(webapi_eventplus_manha.Domains.PresencasEvento)">
+            <summary>
+            Método para realizar o cadastro de um novo tipo de usuário
+            </summary>
+            <param name="tiposUsuario"></param>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.IPresencaEventoRepository.listarPresencaEvento">
+            <summary>
+            Listar todos os usuários criados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.IPresencaEventoRepository.Atualizar(System.Guid,webapi_eventplus_manha.Domains.PresencasEvento)">
+            <summary>
+            Método para realizar a atualização de um tipo de usuário
+            </summary>
+            <param name="id"></param>
+            <param name="tiposUsuario"></param>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.IPresencaEventoRepository.Deletar(System.Guid)">
+            <summary>
+            Método para deletar um tipo de usuário específico
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.ITiposEventoRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Método que será criado para buscar um Evento por ID
+            </summary>
+            <param name="id"></param>
+            <returns>Evento Com o ID Buscado</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.ITiposEventoRepository.CadastrarTipoEvento(webapi_eventplus_manha.Domains.TiposEvento)">
+            <summary>
+            Método para realizar o cadastro de um novo tipo de Evento
+            </summary>
+            <param name="TiposEvento"></param>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.ITiposEventoRepository.ListarTiposEventos">
+            <summary>
+            Listar todos os usuários criados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.ITiposEventoRepository.Atualizar(System.Guid,webapi_eventplus_manha.Domains.TiposEvento)">
+            <summary>
+            Método para realizar a atualização de um tipo de Evento
+            </summary>
+            <param name="id"></param>
+            <param name="tiposUsuario"></param>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.ITiposEventoRepository.Deletar(System.Guid)">
+            <summary>
+            Método para deletar um tipo de Evento específico
+            </summary>
+            <param name="id"></param>
         </member>
         <member name="M:webapi_eventplus_manha.Interfaces.ITiposUsuarioRepository.BuscarPorId(System.Guid)">
             <summary>
@@ -128,6 +217,37 @@
         </member>
         <member name="M:webapi_eventplus_manha.Migrations.DBEventPlus02.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
+        </member>
+        <member name="M:webapi_eventplus_manha.Repositories.InstituicaoRepository.CadastrarInstituicao(webapi_eventplus_manha.Domains.Instituicao)">
+            <summary>
+            cadastra nova instituição
+            </summary>
+            <param name="instituicao"></param>
+        </member>
+        <member name="M:webapi_eventplus_manha.Repositories.TiposEventoRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Método para retornar a partir de um ID um tipo de evento cadastrado
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Repositories.TiposEventoRepository.CadastrarTipoEvento(webapi_eventplus_manha.Domains.TiposEvento)">
+            <summary>
+            Método para cadastrar um novo tipo de evento
+            </summary>
+            <param name="tiposEvento"></param>
+        </member>
+        <member name="M:webapi_eventplus_manha.Repositories.TiposEventoRepository.Deletar(System.Guid)">
+            <summary>
+            Método para deletar um evento cadastrado 
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:webapi_eventplus_manha.Repositories.TiposEventoRepository.ListarTiposEventos">
+            <summary>
+            Método para listar os tipos de evento existentes
+            </summary>
+            <returns>lista de tipos de ventos</returns>
         </member>
         <member name="M:webapi_eventplus_manha.Utils.Criptografia.GerarHash(System.String)">
             <summary>
