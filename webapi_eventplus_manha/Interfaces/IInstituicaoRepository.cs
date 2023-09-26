@@ -9,5 +9,7 @@ namespace webapi_eventplus_manha.Interfaces
         /// </summary>
         /// <param name="presencasEvento"></param>
         void CadastrarInstituicao(Instituicao instituicao);
+
+        List<Instituicao> ListarInstituicao();
     }
 }

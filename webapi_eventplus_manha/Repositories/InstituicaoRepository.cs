@@ -24,5 +24,10 @@ namespace webapi_eventplus_manha.Repositories
 
             _eventContext.SaveChanges();
         }
+
+        public List<Instituicao> ListarInstituicao()
+        {
+           return _eventContext.Instituicao.ToList();
+        }
     }
 }

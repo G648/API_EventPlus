@@ -1,4 +1,5 @@
-﻿using webapi_eventplus_manha.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using webapi_eventplus_manha.Contexts;
 using webapi_eventplus_manha.Domains;
 using webapi_eventplus_manha.Interfaces;
 
@@ -10,17 +11,21 @@ namespace webapi_eventplus_manha.Repositories
 
         public PresencaEventoRepository()
         {
-            _eventContext= new EventContext();
+            _eventContext = new EventContext();
         }
 
         public void Atualizar(Guid id, PresencasEvento presencasEvento)
         {
-            throw new NotImplementedException();
+            PresencasEvento atualizarPresenca =  _eventContext.PresencasEvento.Find(id, presencasEvento)!;
+
+            _eventContext.Update(atualizarPresenca);
+
+            _eventContext.SaveChanges();
         }
 
         public PresencasEvento BuscarPorId(Guid id)
         {
-            PresencasEvento presencaEncontrada =  _eventContext.PresencasEvento.Find(id);
+            PresencasEvento presencaEncontrada = _eventContext.PresencasEvento.FirstOrDefault(p => p.IdPresencaEvento == id)!;
 
             if (presencaEncontrada == null)
             {
@@ -37,19 +42,23 @@ namespace webapi_eventplus_manha.Repositories
             _eventContext.SaveChanges();
         }
 
-        public void Deletar(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<PresencasEvento> listarPresencaEvento()
         {
-            throw new NotImplementedException();
+            return _eventContext.PresencasEvento.ToList();
         }
 
         public List<PresencasEvento> presencaEventoUser(Guid IdUsuario)
         {
-            throw new NotImplementedException();
+            return _eventContext.PresencasEvento.Where(p => p.IdUsuario == IdUsuario).Include(p => p.Usuario).Include(p => p.Evento).ToList();
+        }
+
+        public void Deletar(Guid id)
+        {
+            PresencasEvento deleteById = _eventContext.PresencasEvento.Find(id);
+
+            _eventContext.Remove(deleteById);
+
+            _eventContext.SaveChanges();
         }
     }
 }

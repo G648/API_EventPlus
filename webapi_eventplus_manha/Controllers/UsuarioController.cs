@@ -41,6 +41,23 @@ namespace webapi_eventplus_manha.Controllers
             }
         }
 
+        /// <summary>
+        /// Método para buscar um usuário por ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Usuário buscado por ID</returns>
+        [HttpGet]
+        public IActionResult GetById(Guid id)
+        {
+            try
+            {
+                return Ok(_usuarioRepository.BuscarPorId(id));
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error.Message);
+            }
+        }
         
     }
 }

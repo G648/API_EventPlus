@@ -16,7 +16,8 @@ namespace webapi_eventplus_manha.Contexts
         //vamos definir a nossa configuração de string de conexão
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=NOTE16-S15; Database=webapi_eventplus_manha; user id= sa; Pwd=Senai@134; TrustServerCertificate=True");
+            //optionsBuilder.UseSqlServer("Server=NOTE16-S15; Database=webapi_eventplus_manha; user id= sa; Pwd=Senai@134; TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Server=AMORIM\\SQLEXPRESS; Database=webapi_eventplus_manha; user id= sa; Pwd=Senai@134; TrustServerCertificate=True");
 
             base.OnConfiguring(optionsBuilder);
         }

@@ -3164,19 +3164,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\45845444845\\.nuget\\packages\\": {}
+    "C:\\Users\\cezar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\45845444845\\Desktop\\Projeto_Event+_Manha_CF\\webapi_eventplus_manha\\webapi_eventplus_manha.csproj",
+      "projectUniqueName": "C:\\Users\\cezar\\OneDrive\\Área de Trabalho\\API_EventPlus\\webapi_eventplus_manha\\webapi_eventplus_manha.csproj",
       "projectName": "webapi_eventplus_manha",
-      "projectPath": "C:\\Users\\45845444845\\Desktop\\Projeto_Event+_Manha_CF\\webapi_eventplus_manha\\webapi_eventplus_manha.csproj",
-      "packagesPath": "C:\\Users\\45845444845\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\45845444845\\Desktop\\Projeto_Event+_Manha_CF\\webapi_eventplus_manha\\obj\\",
+      "projectPath": "C:\\Users\\cezar\\OneDrive\\Área de Trabalho\\API_EventPlus\\webapi_eventplus_manha\\webapi_eventplus_manha.csproj",
+      "packagesPath": "C:\\Users\\cezar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cezar\\OneDrive\\Área de Trabalho\\API_EventPlus\\webapi_eventplus_manha\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\45845444845\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cezar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3262,7 +3262,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

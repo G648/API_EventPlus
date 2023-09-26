@@ -4,12 +4,122 @@
         <name>webapi_eventplus_manha</name>
     </assembly>
     <members>
+        <member name="M:webapi_eventplus_manha.Controllers.ComentarioEventoController.Post(webapi_eventplus_manha.Domains.ComentariosEvento)">
+            <summary>
+            EndPoint para realizar o cadastro de um novo comentário
+            </summary>
+            <param name="comentariosEvento"></param>
+            <returns>Comentário cadastrado</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.ComentarioEventoController.Get">
+            <summary>
+            EndPoint para listar os comentários
+            </summary>
+            <returns>lista de comentários cadastrados</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.ComentarioEventoController.GetById(System.Guid)">
+            <summary>
+            EndPoint para realizar a busca de um determinado usuário
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.ComentarioEventoController.Delete(System.Guid)">
+            <summary>
+            EndPoint para remover um comentário
+            </summary>
+            <param name="id"></param>
+            <returns>Comentário removido</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.EventoController.Post(webapi_eventplus_manha.Domains.Evento)">
+            <summary>
+            Método para cadastrar um novo evento
+            </summary>
+            <param name="evento"></param>
+            <returns> Valor cadastrado com sucesso!</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.EventoController.Get">
+            <summary>
+            Método para realizar a listagem dos eventos cadastrados
+            </summary>
+            <returns>Lista com os objetos cadastrados</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.EventoController.Delete(System.Guid)">
+            <summary>
+            Método para realizar o delete de um evento
+            </summary>
+            <param name="id"></param>
+            <returns>No content, evento deletado com sucesso</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.EventoController.Put(System.Guid,webapi_eventplus_manha.Domains.Evento)">
+            <summary>
+            Método para atualizar um determinado evento
+            </summary>
+            <param name="id"></param>
+            <param name="evento"></param>
+            <returns>Novo evento atualizado</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.EventoController.GetById(System.Guid)">
+            <summary>
+            Método criado para buscar um evento por ID
+            </summary>
+            <param name="id"></param>
+            <returns>Objeto Buscado</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.InstituicaoController.Get">
+            <summary>
+            Método para realizar listagem das instituições criadas no sistema
+            </summary>
+            <returns>Instituições Cadastradas</returns>
+        </member>
         <member name="M:webapi_eventplus_manha.Controllers.LoginController.Login(webapi_eventplus_manha.ViewModels.LoginViewModel)">
             <summary>
             Método para realizar o login do usuáro
             </summary>
             <param name="usuario"></param>
             <returns>Token do uuário logado</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.PresencasEventoController.Post(webapi_eventplus_manha.Domains.PresencasEvento)">
+            <summary>
+            Método para realizar um cadastro de uma nova presença para um determinado evento
+            </summary>
+            <param name="presencasEvento"></param>
+            <returns>Presença cadastrada</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.PresencasEventoController.GetById(System.Guid)">
+            <summary>
+            Método para buscar uma presença de evento por ID
+            </summary>
+            <param name="id"></param>
+            <returns>Presença de evento buscada</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.PresencasEventoController.Get(System.Guid)">
+            <summary>
+            Método para buscar todos os eventos vinculados a um usuario
+            </summary>
+            <param name="id"></param>
+            <returns>presenças de um usuario em um determinado evento</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.PresencasEventoController.Get">
+            <summary>
+            Método para realizar a listagem de todas as presenças de eventos
+            </summary>
+            <returns>Lista com presença de eventos</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.PresencasEventoController.Put(System.Guid,webapi_eventplus_manha.Domains.PresencasEvento)">
+            <summary>
+            Endpoint para realizar atualização do evento cadastrado
+            </summary>
+            <param name="id"></param>
+            <param name="presencasEvento"></param>
+            <returns>Objeto atualizado</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.PresencasEventoController.Delete(System.Guid)">
+            <summary>
+            método para realizar o delete de uma presença de evento específica
+            </summary>
+            <param name="id"></param>
+            <returns>No content</returns>
         </member>
         <member name="M:webapi_eventplus_manha.Controllers.TiposEventoController.Post(webapi_eventplus_manha.Domains.TiposEvento)">
             <summary>
@@ -70,6 +180,69 @@
             </summary>
             <param name="usuario"></param>
             <returns>Usuário cadastrado</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Controllers.UsuarioController.GetById(System.Guid)">
+            <summary>
+            Método para buscar um usuário por ID
+            </summary>
+            <param name="id"></param>
+            <returns>Usuário buscado por ID</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.IComentariosEventoRepository.CadastrarComentario(webapi_eventplus_manha.Domains.ComentariosEvento)">
+            <summary>
+            Método para cadastrar um novo comentário
+            </summary>
+            <param name="comentariosEvento"></param>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.IComentariosEventoRepository.ListarComentarios">
+            <summary>
+            Método para listar os comentários de eventos
+            </summary>
+            <returns>Lista de comentários</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.IComentariosEventoRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Método para listar um comentário específico
+            </summary>
+            <param name="id"></param>
+            <returns>Comentário buscado</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.IComentariosEventoRepository.DeletarComentario(System.Guid)">
+            <summary>
+            Método para remover um comentário cadastrado
+            </summary>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.IEventoRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Método que será criado para buscar um usuário por ID
+            </summary>
+            <param name="id"></param>
+            <returns>Usuario Com o ID Buscado</returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.IEventoRepository.CadastrarEvento(webapi_eventplus_manha.Domains.Evento)">
+            <summary>
+            Método para realizar o cadastro de um novo tipo de usuário
+            </summary>
+            <param name="tiposUsuario"></param>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.IEventoRepository.listarEventos">
+            <summary>
+            Listar todos os usuários criados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.IEventoRepository.Atualizar(System.Guid,webapi_eventplus_manha.Domains.Evento)">
+            <summary>
+            Método para realizar a atualização de um tipo de usuário
+            </summary>
+            <param name="id"></param>
+            <param name="tiposUsuario"></param>
+        </member>
+        <member name="M:webapi_eventplus_manha.Interfaces.IEventoRepository.Deletar(System.Guid)">
+            <summary>
+            Método para deletar um tipo de usuário específico
+            </summary>
+            <param name="id"></param>
         </member>
         <member name="M:webapi_eventplus_manha.Interfaces.IInstituicaoRepository.CadastrarInstituicao(webapi_eventplus_manha.Domains.Instituicao)">
             <summary>
@@ -217,6 +390,17 @@
         </member>
         <member name="M:webapi_eventplus_manha.Migrations.DBEventPlus02.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
+        </member>
+        <member name="M:webapi_eventplus_manha.Repositories.ComentariosEventoRepository.#ctor">
+            <summary>
+            Construtor da nossa classe de conexão com o banco de dados
+            </summary>
+        </member>
+        <member name="M:webapi_eventplus_manha.Repositories.EventoRepository.CadastrarEvento(webapi_eventplus_manha.Domains.Evento)">
+            <summary>
+            Método criar para cadastrar um evento 
+            </summary>
+            <param name="evento"></param>
         </member>
         <member name="M:webapi_eventplus_manha.Repositories.InstituicaoRepository.CadastrarInstituicao(webapi_eventplus_manha.Domains.Instituicao)">
             <summary>

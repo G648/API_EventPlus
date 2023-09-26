@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Azure.Core;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using webapi_eventplus_manha.Domains;
 using webapi_eventplus_manha.Interfaces;
@@ -25,6 +26,24 @@ namespace webapi_eventplus_manha.Controllers
                 _instituicaoRepository.CadastrarInstituicao(instituicao);
 
                 return Ok("Objeto cadastrado com sucesso!");
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error.Message);
+            }
+        }
+
+        /// <summary>
+        /// Método para realizar listagem das instituições criadas no sistema
+        /// </summary>
+        /// <returns>Instituições Cadastradas</returns>
+        [HttpGet]
+        public IActionResult Get()
+        {
+            try
+            {
+                return Ok(_instituicaoRepository.ListarInstituicao());
+
             }
             catch (Exception error)
             {
